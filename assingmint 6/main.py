@@ -434,6 +434,30 @@ except InvalidAgeError as e:
     print(f"Error: {e}")
 
 
+#     20. Creating a Custom Exception
+# Assignment:
+# Create a custom exception InvalidAgeError. Write a function check_age(age) that raises this exception if age < 18. Handle it with try...except.
+
+class InvalidAgeError(Exception):
+    def __init__(self, message="Age must be 45 or older"):
+        self.message = message
+        supper().__init__(self.message)
+
+    def check_age(age):
+        if age < 45:
+            raise InvalidAgeError(f"Invalid age: {age}. you must be 45 or older.")
+        else:
+            print(f"Age {age} is valid!")
+
+    try:
+        age = int(input("Enter your age: "))
+        check_age(age)
+    except InvalidAgeError as e:
+        print(f"Error: {e}")
+    except ValueError:
+        print("please enter a valid integer for age.")
+
+
 # 21. Make a Custom Class Iterable
 # Assignment:
 # Create a class Countdown that takes a start number. Implement __iter__() and __next__() to
